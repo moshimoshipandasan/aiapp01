@@ -9,8 +9,8 @@ import pandas as pd
 import os
 
 # GitHUbにアップするときはこの下に書き換える
-model = load_model('/keras_Model.h5', compile=False)
-class_names = open('/labels.txt', 'r').readlines()
+model = load_model('keras_Model.h5', compile=False)
+class_names = open('labels.txt', 'r').readlines()
 # model = load_model('/content/keras_model.h5', compile=False)
 # class_names = open('/content/labels.txt', 'r').readlines()
 
