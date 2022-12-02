@@ -1,6 +1,7 @@
 streamlit==1.8.1
 Pillow
 matplotlib
-keras
+tensorflow==2.9.2
+keras==2.9.0
 numpy
 pandas
