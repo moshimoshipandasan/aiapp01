@@ -6,6 +6,7 @@ from keras.models import load_model
 from PIL import Image, ImageOps
 import numpy as np
 import pandas as pd
+import os
 
 # GitHUbにアップするときはこの下に書き換える
 model = load_model('/keras_Model.h5', compile=False)
