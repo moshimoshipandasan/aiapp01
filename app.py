@@ -8,8 +8,9 @@ import numpy as np
 import pandas as pd
 
 # GitHUbにアップするときはこの下に書き換える
-model = load_model('keras_Model.h5', compile=False)
-# model = load_model('/content/keras_model.h5', compile=False)
+# model = load_model('keras_Model.h5', compile=False)
+model = load_model('/content/keras_model.h5', compile=False)
+class_names = open('/content/labels.txt', 'r').readlines()
 
 st.set_option("deprecation.showfileUploaderEncoding", False)
 
@@ -47,9 +48,8 @@ if img_file is not None:
           prediction = model.predict(data)
 
         # 円グラフの表示
-        pie_labels = ['none', 'rock', 'scissors', 'paper']
+        pie_labels = class_names
         pie_probs = prediction[0]
-        st.write(pd.DataFrame(pie_probs,pie_labels))
         st.subheader('円グラフ')
         fig, ax = plt.subplots()
         wedgeprops={"width":0.3, "edgecolor":"white"}
@@ -57,4 +57,6 @@ if img_file is not None:
         ax.pie(pie_probs, labels=pie_labels, counterclock=False, startangle=90,
                textprops=textprops, autopct="%.2f", wedgeprops=wedgeprops)  # 円グラフ
         st.pyplot(fig)
-        st.subheader('表')
+        # 一覧表の表示
+        st.subheader('一覧表')
+        st.write(pd.DataFrame(pie_probs,pie_labels))

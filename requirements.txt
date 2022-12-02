@@ -1,7 +1,6 @@
 streamlit==1.8.1
-Pillow==7.1.2
-matplotlib==3.2.2
-tensorflow==2.9.2
-keras==2.9.0
-numpy==1.21.6
-pandas==1.3.5
+Pillow
+matplotlib
+keras
+numpy
+pandas
